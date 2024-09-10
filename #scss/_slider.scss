@@ -1,0 +1,19 @@
+/* Slider vars */
+// $slide-width: 768px;
+// $slider-scroll-time: 1s;
+
+@mixin slider($slide-width, $slider-scroll-time){
+
+    .slider .slide{
+        transition: transform $slider-scroll-time;
+    }
+    .slider:has(.slider-navs__nav--01:checked) .slide{
+        transform: translateX(0px);
+    }
+    .slider:has(.slider-navs__nav--02:checked) .slide{
+        transform: translateX(-$slide-width);
+    }
+    .slider:has(.slider-navs__nav--03:checked) .slide{
+        transform: translateX(-$slide-width*2);
+    }
+}
